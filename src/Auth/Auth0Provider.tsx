@@ -9,7 +9,7 @@ interface Auth0ProviderProps {
 const Auth0ProviderWithHistory = ({ children }: Auth0ProviderProps) => {
   const domain = import.meta.env.VITE_AUTH0_DOMAIN!;
   const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID!;
-  const customRedirectUri = 'https://www.google.com';
+  const customRedirectUri = 'http://localhost:5173/login';
 
   console.log('Auth0Provider Config:', { domain, clientId, customRedirectUri });
 
