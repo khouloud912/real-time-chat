@@ -1,4 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import Sidebar from '../components/Sidebar';
 
 const Home = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -7,12 +8,9 @@ const Home = () => {
   console.log('isAuthenticated', isAuthenticated);
 
   return (
-    isAuthenticated && (
-      <div>
-        <h2>{user?.name}</h2>
-        <p>{user?.email}</p>
-      </div>
-    )
+    <div>
+      <Sidebar />
+    </div>
   );
 };
 
