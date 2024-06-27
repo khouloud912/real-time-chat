@@ -12,7 +12,6 @@ const Home = () => {
   const toggleDarkMode = () => {
     console.log('mode', darkMode);
     setDarkMode(!darkMode); // Toggle dark mode state
-    document.body.classList.toggle('dark'); // Toggle dark mode class on body
   };
   return (
     <div className={`flex ${darkMode ? 'dark' : ''}`}>
