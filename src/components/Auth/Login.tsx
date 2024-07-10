@@ -1,7 +1,11 @@
-import { useAuth } from '../../auth';
+import { useAuth } from '../../auth/auth';
 
 const Login = () => {
   const { login } = useAuth();
-  return <button onClick={login}>Log In</button>;
+  return (
+    <button className="button__login" onClick={login}>
+      Log In
+    </button>
+  );
 };
 export default Login;

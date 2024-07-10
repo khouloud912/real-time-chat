@@ -2,7 +2,7 @@ import { SunOutlined, MoonOutlined } from '@ant-design/icons';
 
 const ToggleSwitch = ({ darkMode, onToggle }: any) => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-row mt-24 rotate-90 items-center justify-center">
       <button
         className={`relative inline-flex flex-shrink-0 h-6 w-12 mx-2 transition-colors duration-200 ease-in-out rounded-full p-1 ${darkMode ? 'bg-gray-700' : 'bg-gray-400'}`}
         onClick={onToggle}

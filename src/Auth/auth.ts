@@ -9,8 +9,12 @@ export const useAuth = () => {
     user,
   } = useAuth0();
 
-  const login = () => {
-    loginWithRedirect();
+  const login = async () => {
+    await loginWithRedirect({
+      appState: {
+        returnTo: '/home',
+      },
+    });
   };
 
   const logoutWithRedirect = () => {

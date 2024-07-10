@@ -54,6 +54,13 @@ const Sidebar = ({ toggleDarkMode }: any) => {
           <span className="mt-0.5 text-sm">Settings</span>
         </div>
         <ToggleSwitch darkMode={darkMode} onToggle={handleToggleDarkMode} />
+        <div className="flex flex-col mt-12 items-center w-full p-2 leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 dark:hover:bg-gray-700 dark:hover:bg-opacity-80 dark:hover:text-white dark:focus:bg-gray-700 dark:focus:bg-opacity-80 dark:focus:text-white dark:active:bg-gray-700 dark:active:bg-opacity-80 dark:active:text-white">
+          <img
+            src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
+            className="w-32 rounded-full"
+            alt="Avatar"
+          />
+        </div>
       </nav>
     </div>
   );
