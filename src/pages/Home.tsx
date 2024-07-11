@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import Sidebar from '../components/Sidebar';
 import { useState } from 'react';
+import ContactSidebar from '../components/ContactSidebar';
 
 const Home = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -14,8 +15,15 @@ const Home = () => {
     setDarkMode(!darkMode); // Toggle dark mode state
   };
   return (
-    <div className={`flex ${darkMode ? 'dark' : ''}`}>
-      <Sidebar toggleDarkMode={toggleDarkMode} />
+    <div
+      className={`grid ${darkMode ? 'dark' : ''}  grid-cols-[max-content_1fr] gap-x-3`}
+    >
+      <div>
+        <Sidebar toggleDarkMode={toggleDarkMode} />
+      </div>
+      <div>
+        <ContactSidebar />
+      </div>
     </div>
   );
 };
