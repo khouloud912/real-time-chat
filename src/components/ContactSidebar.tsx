@@ -27,7 +27,7 @@ const ContactSidebar = () => {
   ];
 
   return (
-    <div className="fixed top-0 flex flex-col h-full w-72 bg-white dark:bg-gray-800 shadow-xl">
+    <div className="fixed top-0 flex flex-col h-[50vh] w-72 bg-white dark:bg-gray-800 shadow-xl">
       <div className="relative mt-3 px-4">
         <input
           type="search"
@@ -39,44 +39,46 @@ const ContactSidebar = () => {
         <SearchOutlined className="absolute top-1/2 transform -translate-y-1/2 left-7 text-gray-400 dark:text-gray-300" />
       </div>
 
-      <div className="flex justify-around p-2 border-b dark:border-gray-700 rounded-full bg-gray-100 dark:bg-gray-700">
-        <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white">
+      <div className="flex justify-around items-center mt-4 mx-auto p-2 w-56 h-8 border-b dark:border-gray-700 rounded-full bg-gray-100 dark:bg-gray-700">
+        <button className="px-2 py-1 text-xs rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-white">
           All chats
         </button>
-        <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white">
+        <button className="px-2 py-1 text-xs rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-white">
           Groups
         </button>
-        <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-white">
+        <button className="px-2 py-1 text-xs rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-white">
           Contacts
         </button>
       </div>
 
       {/* Contact cards */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 flex flex-col space-y-2">
         {contacts.map((contact) => (
           <div
             key={contact.id}
-            className="flex items-center p-4 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+            className="flex items-start p-2 border-b dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
-            <img
-              className="w-12 h-12 rounded-full object-cover"
-              src={contact.imageUrl}
-              alt={contact.name}
-            />
-            <div className="ml-4 flex-1">
-              <div className="flex justify-between items-center">
-                <span className="font-semibold dark:text-white">
-                  {contact.name}
-                </span>
-                {contact.messageCount > 0 && (
-                  <span className="ml-2 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                    {contact.messageCount}
+            <div className="flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg p-2 w-full">
+              <img
+                className="w-12 h-12 rounded-full object-cover"
+                src={contact.imageUrl}
+                alt={contact.name}
+              />
+              <div className="ml-3 flex-1">
+                <div className="flex justify-between items-center mb-1">
+                  <span className="font-semibold text-sm dark:text-white">
+                    {contact.name}
                   </span>
-                )}
+                  {contact.messageCount > 0 && (
+                    <span className="ml-2 bg-green-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {contact.messageCount}
+                    </span>
+                  )}
+                </div>
+                  <span className="text-xs text-gray-600 dark:text-gray-400">
+                    {contact.lastMessage}
+                  </span>
               </div>
-              <span className="text-sm text-gray-600 dark:text-gray-400">
-                {contact.lastMessage}
-              </span>
             </div>
           </div>
         ))}
