@@ -2,6 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Sidebar from '../components/Sidebar';
 import { useState } from 'react';
 import ContactSidebar from '../components/ContactSidebar';
+import MeetingSidebar from '../components/MeetingSidebar';
 
 const Home = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -21,8 +22,9 @@ const Home = () => {
       <div>
         <Sidebar toggleDarkMode={toggleDarkMode} />
       </div>
-      <div>
+      <div className="relative">
         <ContactSidebar />
+        <MeetingSidebar/>
       </div>
     </div>
   );
