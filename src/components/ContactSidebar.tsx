@@ -64,13 +64,13 @@ const ContactSidebar = () => {
                 src={contact.imageUrl}
                 alt={contact.name}
               />
-              <div className="ml-2 flex-1">
+              <div className="ml-2 flex-0">
                 <div className="flex justify-between mb-1">
                   <span className="font-semibold text-xs dark:text-white">
                     {contact.name}
                   </span>
                   {contact.messageCount > 0 && (
-                    <span className="ml-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                    <span className="ml-7 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                       {contact.messageCount}
                     </span>
                   )}
@@ -83,6 +83,7 @@ const ContactSidebar = () => {
           ))}
         </div>
       </div>
+      
     </>
   );
 };
